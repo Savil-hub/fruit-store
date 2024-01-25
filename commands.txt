@@ -1,0 +1,2 @@
+docker build --tag my-project .
+docker run --publish 8000:8000 my-project
