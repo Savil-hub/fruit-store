@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil Fruit Trading Co.</title>
+    <!-- Add your CSS and styling here -->
+
+    <!-- Styling for the body and background color -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006994; /* Sea blue */
+        }
+
+        /* Styling for the header */
+        header {
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            padding: 10px;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        /* Styling for the main content container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FF576B; /* Text Color (Reddish) */
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        /* Styling for buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px; /* Add some margin for better spacing */
+        }
+
+        .btn:hover {
+            background-color: #2679b7; /* Darker Blue on hover */
+        }
+
+        .login-btn {
+            background-color: #32CD32; /* Green */
+        }
+
+        .logout-btn {
+            background-color: #FF0000; /* Red */
+        }
+
+        /* Styling for navigation links */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="images/company-logo.webp" alt="company-logo.webp" width="150">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'online_store' %}">Online Store</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <!-- Add more navigation items as needed -->
+                    </ul>
+                </nav>
+
+                <!-- Check if the user is authenticated and display appropriate button -->
+                {% if user.is_authenticated %}
+                <a href="{% url 'user_auth:custom_logout' %}" class="btn logout-btn">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn login-btn">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Welcome to Devil Fruit Trading Co.</h1>
+            <p>Your source for the world's most powerful Devil Fruits.</p>
+            <a href="{% url 'online_store' %}" class="btn btn-primary">Explore Our Store</a>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class "footer-content">
+                <div class="contact-info">
+                    <h4>Contact Us</h4>
+                    <p>If you have any questions or inquiries, please feel free to contact us:</p>
+                    <address>
+                        Email: <a href="mailto:devilfruitdealer@gmail.com">devilfruitdealer@gmail.com</a><br>
+                        Phone: <a href="tel:+8827080134">+882 708 0134</a>
+                    </address>
+                </div>
+                <div class="company-info">
+                    <div class="text-center">
+                        <img src="images/company-logo.webp" alt="company-logo.webp" width="150">
+                        <p>&copy; 2023 Devil Fruit Trading Co. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
