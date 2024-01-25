@@ -1,5 +1,5 @@
 # From a certain lighter version of python
-From python:3.10-slim-buster
+FROM python:3.10-slim-buster
 
 # This can be called anything this is ran within the image
 WORKDIR /app
