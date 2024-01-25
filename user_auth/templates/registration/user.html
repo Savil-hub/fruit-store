@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Devil Fruit Trading Co.</title>
+    <!-- Add your CSS and styling here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006994; /* Sea blue */
+        }
+
+        header {
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            padding: 10px;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FF576B; /* Text Color (Redish) */
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #2679b7; /* Darker Blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Devil Fruit Trading Co.</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Welcome, {{user}} to My Website</h1>
+            <p>Thank you for registering!</p>
+            <a href="{% url 'home' %}" class="btn">Go to Home Page</a>
+        </div>
+    </main>
+</body>
+</html>

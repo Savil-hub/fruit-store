@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        /* Styling for the body and background color */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006994; /* Sea blue */
+        }
+
+        /* Styling for the main heading 'Contact Us' */
+        h1 {
+            text-align: center;
+            color: #FF576B; /* Text Color (Redish) */
+        }
+
+        /* Styling for the secondary heading */
+        h4 {
+            text-align: center;
+            color: #333; /* Text Color (Dark Gray) */
+        }
+
+        /* Styling for the form container */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff; /* Form Background (White) */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the form elements, including table and submit button */
+        table {
+            width: 100%;
+        }
+
+        .save {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .save:hover {
+            background-color: #2679b7; /* Darker Blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div style="margin:80px">
+        <h1 align="center">Contact Us</h1>
+        <hr>
+        <h4>Contact us directly if you have any queries. We will get in touch with you shortly.</h4>
+        <hr>
+        <br>
+        <!-- Create a form for user input -->
+        <form method="post" action="" enctype="multipart/form-data" class="post-form">
+            {% csrf_token %} <!-- Include a CSRF token for security -->
+            <table>
+                {{form.as_table}} <!-- Render form fields as a table -->
+            </table>
+            <button type="submit" class="save btn btn-default">Submit</button> <!-- Submit button -->
+        </form>
+    </div>
+</body>
+</html>

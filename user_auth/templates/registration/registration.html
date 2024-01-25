@@ -1,0 +1,17 @@
+<!-- registration/templates/registration/registration.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your head content goes here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Register an Account</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

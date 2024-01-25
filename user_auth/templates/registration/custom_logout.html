@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out</title>
+    <!-- Add your CSS and styling here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006994; /* Sea blue */
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FF576B; /* Text Color (Redish) */
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Primary Color (Blue) */
+            color: #fff; /* Text Color (White) */
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2679b7; /* Darker Blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logged Out</h1>
+        <p>You have been successfully logged out.</p>
+        <a href="{% url 'user_auth:login' %}" class="btn register-btn register-link">Login</a>
+    </div>
+</body>
+</html>

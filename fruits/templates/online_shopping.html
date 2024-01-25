@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+   
+    <!-- Load static files -->
+    {% load static %}
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Add your custom CSS here -->
+    <style>
+
+        /* Define the custom image size */
+        .custom-image {
+            width: 310px;
+            height: 310px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Add this rule to set the background color */
+        body {
+            background-color: #006994; /* Sea blue */
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            background-color: #3498db; /* Primary Color (Blue) not working????? */
+        }
+
+        .navbar-brand {
+            color: #FF576B !important; /* Text Color (redish) */
+            font-weight: bold;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff; /* Text Color (White) */
+        }
+
+        .nav-link {
+            color: #FF576B !important; /* Text Color (redish) */
+        }
+
+        /* Product Card Styling */
+        .card {
+            background-color: #fff; /* Card Background (White) */
+            border: 1px solid #ddd; /* Border Color (Slightly Darker Gray) */
+            border-radius: 10px; 
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #eeeeee; /* Footer Background (Light Gray) */
+            padding: 62px 0;
+        }
+
+        footer h4 {
+            color: #333; /* Heading Text Color (Dark Gray) */
+        }
+
+        footer p {
+            color: #333; /* Text Color (Dark Gray) */
+        }
+
+        footer a {
+            color: #3498db; /* Accent Color (Sky Blue) */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'home' %}">Online Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'buy' %}">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Product Cards -->
+                <!-- Repeat this card structure for each product -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Mochi_Mochi_no_Mi.webp' %}" class="card-img-top custom-image" alt="Mochi_Mochi_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">mochi mochi no mi</h5>
+                            <p class="card-text">Once eaten the user is given the ability to create, control, and turn any part of their body into mochi—specifically a thick, extremely viscous and stretchy, white-colored mochi paste—that they can manipulate as they please, including hardening it into different shapes.</p>
+                            <p class="card-text">B$2,800,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Ito_Ito_no_mi.webp' %}" class="card-img-top custom-image" alt="Ito_Ito_no_mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Ito Ito no mi</h5>
+                            <p class="card-text">Once eaten the user is bestowed with the power to generate and control white, wafer-thin, razor-sharp strings attachable to seemingly any surface (even non-solid targets such as clouds) from seemingly any part of the user's own body (even the innards), though mostly seen protruding from the palms and fingertips, for many diverse purposes.</p>
+                            <p class="card-text">B$1,500,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Ope_Ope_no_Mi.webp' %}" class="card-img-top custom-image" alt="Ope_Ope_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Ope Ope no Mi</h5>
+                            <p class="card-text">Once eaten the Ope Ope no Mi allows its user to manipulate and "remodel" the world around them as if by operating on it. By conjuring a blue-transparent, spherical forcefield of sorts that is centered around the user, they gain control over everything inside that territory, from living beings — including themselves — to nonliving objects.</p>
+                            <p class="card-text">B$5,000,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Uo_Uo_no_Mi_Model_Seiryu.webp' %}" class="card-img-top custom-image" alt="Uo_Uo_no_Mi_Model_Seiryu.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Uo Uo no MI, Model:Seiryu</h5>
+                            <p class="card-text">Once eaten this fruit enables the user to turn into a giant, serpentine, blue-scaled dragon—specifically a type of Eastern dragon (Ryū?) called the "Azure Dragon"—and into a human-dragon hybrid. Apart from scales, acquired dragon features include horns, sharp fangs, and limbs with clawed hands and feet. In a full Beast Form, the user can grow up to rival a small town in size.</p>
+                            <p class="card-text">B$3,500,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Neko_Neko_no_Mi_Model_Leopard.webp' %}" class="card-img-top custom-image" alt="Neko_Neko_no_Mi_Model_Leopard.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Neko Neko no Mi, Model:Leopard </h5>
+                            <p class="card-text">Once eaten the fruit grants the user the abilities of a leopard, such as enhanced strength, durability, speed and agility, powerful teeth and jaws, retractable claws, stealth, enhanced senses, and enhanced climbing and jumping capabilities.</p>
+                            <p class="card-text">B$5,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Hebi_Hebi_no_Mi_Model_Yamata_no_Orochi.webp' %}" class="card-img-top custom-image" alt="Hebi_Hebi_no_Mi_Model_Yamata_no_Orochi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Hebi Hebi no Mi, Model:Yamata no Orochi</h5>
+                            <p class="card-text">Once eaten this fruit grants the user eight separate heads, each one with an extremely long neck that has the ability to attack in multiple directions at once and reach targets that are further away than he could normally reach and trap people in its powerful jaws. Each one capable of speech on their own. It appears that the user has some degree of control over the number of heads that can sprout at once, with eight being the maximum limit. The user receives a boost to their physical abilities the user also has an incredible amount of durability in their transformed state. The fruit's multiple heads also allow the user to survive decapitation, even in Human Form, resulting in the user being required to be beheaded eight times in order to die.</p>
+                            <p class="card-text">B$10,000,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Goro_Goro_no_Mi.webp' %}" class="card-img-top custom-image" alt="Goro_Goro_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Goro Goro no Mi</h5>
+                            <p class="card-text">Once eaten the holder of this Logia power can create, control, and transform into electricity, effectively becoming lightning incarnate. They can discharge varying amounts of electricity from their body to manipulate as they please, including regulate the voltage: 200 million volts being the maximum output (roughly in the range of natural lightning). Given the sheer destructive power that is inherent to lightning, this ability seems remarkably strong even by Logia standards and grants overwhelming attack power, as well as high speed and versatility. The Goro Goro no Mi's power is one of the few considered invincible.</p>
+                            <p class="card-text">B$21,000,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Yami_Yami_no_mi.webp' %}" class="card-img-top custom-image" alt="Yami_Yami_no_mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Yami Yami no mi</h5>
+                            <p class="card-text">Once eaten that it allows the user to control darkness and its unique property of gravity. The darkness is a void that devours and crushes everything. Due to this, the user can absorb physical matter and attacks of any type by sucking it into the darkness. The user can also use this ability to irresistibly pull the opponent to them, regardless of their current state.Similar to a black hole, the user can absorb things inside a vortex. It seems that it does not completely compress and annihilate that which is sucked in as an actual black hole would do, but rather creates some form of space where things are stored. In addition to the previous abilities, this fruit somehow has one unique and frightening ability that separates it from all other Devil Fruits: the ability to absorb and completely nullify the powers of other Devil Fruit users by simply touching them.</p>
+                            <p class="card-text">B$500,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Mera_Mera_no_Mi.webp' %}" class="card-img-top custom-image" alt="Mera_Mera_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Mera Mera no Mi</h5>
+                            <p class="card-text">Once eaten it allows the user to produce as well as become the element they control. In this case, the user is able to create, control, and become fire. With this in mind, the user can create devastating fire-based attacks and gain a high resistance towards most heat-based attacks. The flames can also be used to increase the force of physical attacks. By turning into fire, the user is capable of letting enemy attacks harmlessly pass through their fiery body or move around quickly in a stream of flames. Igniting oneself similarly has the added effect of burning an opponent if they had tried to physically harm the user.</p>
+                            <p class="card-text">B$50,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Mero_Mero_no_mi.webp' %}" class="card-img-top custom-image" alt="Mero_Mero_no_mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Mero Mero no Mi</h5>
+                            <p class="card-text">Once eaten the user is able to transform those who lust or love the user into stone in varying degrees by using their "dirty thoughts". Victims that have been completely turned to stone are incapable of consciousness and susceptible to physical damage unless the user de-petrifies them. Petrification can also be achieved through physically striking an opponent, although the only area that is turned to stone is the contacted area, as opposed to the entire body. The power also extends to nonliving objects.</p>
+                            <p class="card-text">B$1,300,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+		                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Kage_Kage_no_Mi.webp' %}" class="card-img-top custom-image" alt="Kage_Kage_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Kage Kage no Mi</h5>
+                            <p class="card-text">Once eaten gives the user the ability to manifest and control shadows of living creatures, including their own, as physical and tangible forms. The user, becoming a Ruler of Shadows, can steal the shadows of other beings and insert them into different bodies, living or dead, which in the latter case enables the creation of zombies.</p>
+                            <p class="card-text">B$2,900,00</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/Horo_Horo_no_Mi.webp' %}" class="card-img-top custom-image" alt="Horo_Horo_no_Mi.webp">
+                        <div class="card-body">
+                            <h5 class="card-title">Horo Horo no Mi</h5>
+                            <p class="card-text">Once eaten allows the user to conjure ghosts, these ghosts can come in different sizes depending on what the user desires. The Ghosts are able to fly and, being intangible, are immune to physical attacks. the user alsoo becomes a Ghost Human and is able to fly.</p>
+                            <p class="card-text">B$2,000,000</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>				
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Contact Us</h4>
+					<p>If you have any questions or inquiries, please feel free to contact us:</p>
+					<address>
+						Email: <a href="devilfuitdealer@gmail.com">devilfuitdealer@gmail.com</a><br>
+						Phone: <a href="tel:+8827080134">+882 708 0134</a>
+					</address>
+				</div>
+				<div class="col-md-6">
+					<div class="text-center">
+						<img src="images/company-logo.webp" alt="company-logo.webp" width="150">
+						<p>&copy; 2023 Devil fuit Trading co. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </footer>
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

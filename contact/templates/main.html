@@ -1,0 +1,19 @@
+{% block content %}
+    <!-- Start an unordered list to display a list of items -->
+    <ul>
+        {% for post in object_list %}
+            <!-- Start a list item for each 'post' in 'object_list' -->
+            <li>
+                <!-- Display the date of the 'post' in the format "Y-m-d" -->
+                <h5>{{ post.date|date: "Y-m-d" }}</h5>
+                
+                <!-- Create a link to contact the seller with the post's title as the anchor text -->
+                <a href="/contact/{{ post.id }}/contact">Contact Seller about {{ post.title }}</a> |
+                <!-- Use the 'post.id' and 'post.title' values dynamically -->
+            </li>
+            <!-- End of list item -->
+        {% endfor %}
+        <!-- End of the 'for' loop iterating through 'object_list' -->
+    </ul>
+    <!-- End of unordered list -->
+{% endblock %}

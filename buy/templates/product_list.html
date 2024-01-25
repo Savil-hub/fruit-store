@@ -1,0 +1,21 @@
+{% extends "online_shopping.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ product.image.url }}" class="card-img-top custom-image" alt="{{ product.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.title }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text">B$ {{ product.price }}</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

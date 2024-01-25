@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login as User</title>
+    <!-- Add your CSS and styling here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #006994; /* Sea blue */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #FF576B; /* Text Color (Redish) */
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0; /* Adjusted margin for a more compact appearance */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none; /* Removed border for a cleaner look */
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: #32CD32; /* Green */
+            color: #fff; /* Text Color (White) */
+        }
+
+        .register-btn {
+            background-color: #FFD700; /* Gold/Yellow */
+            color: #000; /* Text Color (Black) for better contrast */
+        }
+
+        .register-link {
+            margin-top: 20px;
+            display: block; /* Ensures the link takes full width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login as User</h1>
+        <form action="{% url 'user_auth:login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="User" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login" class="btn login-btn">
+        </form>
+        <a href="{% url 'user_auth:register' %}" class="btn register-btn register-link">Register</a>
+    </div>
+</body>
+</html>
